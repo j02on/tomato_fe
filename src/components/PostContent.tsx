@@ -11,7 +11,7 @@ interface IPostType {
 
 export const PostContent = ({title, content, keyword, onClick} : IPostType) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Text fontSize={24} fontWeight={600}>{title}</Text>
       <Text fontSize={16} fontWeight={300} color={colors.gray[500]}>{content}</Text>
       <Flex>

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { colors, Flex } from "../design-token"
-import { Logo } from "../assets/Logo"
+import { Logo } from "../assets"
 import { Button } from "./Button"
 
 export const Header = () => {
