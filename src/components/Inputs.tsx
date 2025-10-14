@@ -63,7 +63,7 @@ const Input = styled.input<Pick<IInputsType, 'isError' | 'width'>>`
   width: ${({ width }) => (width ? width : '100%')};
   border-radius: 12px;
   border: 1px solid
-    ${({ isError }) => (isError ? colors.error : colors.gray[300])};
+    ${({ isError }) => (isError ? colors.red[600] : colors.gray[300])};
   background-color: ${colors.gray[200]};
   font-size: 16px;
   font-weight: 400;
