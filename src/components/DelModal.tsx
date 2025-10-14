@@ -40,7 +40,7 @@ const Back = styled.div `
 `
 
 const ModalContent  = styled.div `
-  max-width: 398px;
+  min-width: 398px;
   padding: 40px 80px;
   border-radius: 20px;
   background-color: ${colors.gray[100]};

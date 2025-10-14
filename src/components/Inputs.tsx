@@ -15,7 +15,7 @@ interface IInputsType {
   width?: string;
 }
 
-export default function Inputs({
+export const Inputs = ({
   label,
   isPwd,
   onChange,
@@ -25,7 +25,7 @@ export default function Inputs({
   onBlur,
   width,
   onKeyUp,
-}: IInputsType) {
+}: IInputsType) => {
   const [isEyeClose, setIsEyeClose] = useState<boolean>(false);
 
   const handleEyeClick = () => {
