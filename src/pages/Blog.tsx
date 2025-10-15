@@ -5,23 +5,23 @@ import { useNavigate } from "react-router-dom"
 
 export const Blog = () => {
   const navigate = useNavigate()
-  const [datas, setDatas] = useState<{id: number,title: string, content: string, keyword : string[]}[]>([
+  const [datas, setDatas] = useState<{id: number,title: string, content: string, keyword : string}[]>([
     {
       title : 'title',
       content: 'content',
-      keyword: ['keyword', 'keyword'],
+      keyword: '전체',
       id: 1
     },
     {
       title : 'title',
       content: 'content',
-      keyword: ['keyword', 'keyword'],
+      keyword: '전체',
       id: 1
     },
     {
       title : 'title',
       content: 'content',
-      keyword: ['keyword', 'keyword'],
+      keyword: '전체',
       id: 1
     },
   ])

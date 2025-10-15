@@ -5,7 +5,7 @@ import { Keyword } from "./Keyword"
 interface IPostType {
   title: string,
   content: string,
-  keyword: string[],
+  keyword: string,
   onClick?: () => void
 }
 
@@ -15,9 +15,7 @@ export const PostContent = ({title, content, keyword, onClick} : IPostType) => {
       <Text fontSize={24} fontWeight={600}>{title}</Text>
       <Text fontSize={16} fontWeight={300} color={colors.gray[500]}>{content}</Text>
       <Flex>
-        {keyword.map((data, index) => (
-          <Keyword key={index}>{data}</Keyword>
-        ))}
+        <Keyword>{keyword}</Keyword>
       </Flex>
     </Container>
   )
