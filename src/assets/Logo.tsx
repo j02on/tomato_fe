@@ -7,7 +7,7 @@ export const Logo = ({width = 80, height = 24} : ILogoType) => {
   return (
     <svg width={width} height={height} viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_6899_7080)">
-<mask id="mask0_6899_7080" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="24">
+<mask id="mask0_6899_7080" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="24">
 <path d="M20 0.5H0V23.5H20V0.5Z" fill="white"/>
 </mask>
 <g mask="url(#mask0_6899_7080)">

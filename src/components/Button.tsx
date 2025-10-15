@@ -41,7 +41,7 @@ const ButtonContainer = styled.button<
   Omit<IButtonType, 'onClick' & 'children'>
 >`
   width: ${({ width }) => (width ? width : 'fit-content')};
-  padding: 15px 27px;
+  padding: 12px 27px;
   border-radius: ${({ isRound }) => (isRound ? '100px' : '12px')};
   background-color: ${({ backgroundColor }) => backgroundColor};
   border: 1px solid ${({ borderColor }) => borderColor};

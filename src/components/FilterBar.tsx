@@ -9,7 +9,7 @@ interface IBarType {
 export const FilterBar = ({setSelected, selected = "전체"}: IBarType) => {
   
   return (
-    <Flex gap={12} alignItems="center">
+    <Flex gap={12} alignItems="center" flexWrap="wrap">
       <Keyword onClick={() => setSelected('전체')} isSelected={selected === "전체"}>전체</Keyword>
       <Keyword onClick={() => setSelected('개인프로젝트')} isSelected={selected === "개인프로젝트"}>개인프로젝트</Keyword>
       <Keyword onClick={() => setSelected('팀프로젝트')} isSelected={selected === "팀프로젝트"}>팀프로젝트</Keyword>
@@ -32,4 +32,5 @@ const Keyword = styled.div<{isSelected : boolean}>`
   justify-content: center;
   align-items: center;
   font-size: 12px;
+  transition: 0.4s all ease-in-out;
 `

@@ -31,4 +31,9 @@ const Container = styled.div `
   flex-direction: column;
   gap: 8px;
   border-bottom: 1px solid ${colors.gray[300]};
+  cursor: pointer;
+  &:hover {
+    background-color: #fcfcfc;
+    transition: 0.6s all ease-in-out;
+  }
 `
