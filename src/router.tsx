@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Blog, Login } from "./pages";
+import { Blog, Login, PdfPage } from "./pages";
 import { RootLayout } from "./layouts";
 
 export const router = createBrowserRouter([
@@ -10,6 +10,10 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <Blog/>
+      },
+      {
+        path: '/pdf',
+        element: <PdfPage/>
       }
     ]
   },

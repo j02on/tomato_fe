@@ -17,9 +17,11 @@ export const Header = () => {
   }
   return (
     <Container>
+      <div onClick={() => navigate('/')}>
       <Logo/>
+      </div>
       <Flex gap={16} alignItems="center">
-        <Button isRound onClick={() => window.location.href = "https://github.com/j02on"} backgroundColor={colors.red[100]} color={colors.red[600]}>깃허브</Button>
+        <Button isRound onClick={() => navigate('/pdf')} backgroundColor={colors.red[100]} color={colors.red[600]}>포트폴리오</Button>
         <Button onClick={handleClick}>{accessToken ? '로그아웃' : '로그인'}</Button>
       </Flex>
     </Container>
