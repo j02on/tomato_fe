@@ -1,16 +1,17 @@
 import { useState } from "react"
 import { colors, Flex, Text } from "../design-token"
-import { Button, DelModal } from "../components"
+import { Button, DelModal, Keyword } from "../components"
 import styled from "@emotion/styled"
 import { useNavigate, useParams } from "react-router-dom"
 import  ReactMarkdown  from 'react-markdown';
 import remarkGfm from "remark-gfm"
 
 export const BlogDetail = () => {
-  const [datas, _] = useState<{title: string, createdAt: string, content: string}>({
+  const [datas, _] = useState<{title: string, createdAt: string, content: string, keyword: string}>({
     title: 'title',
     createdAt: '2024-01-01',
-    content: 'content'
+    content: 'content',
+    keyword: '프론트엔드'
   })
   const [isDelModalShow, setIsDelModalShow] = useState<boolean>(false)
 
@@ -34,6 +35,7 @@ export const BlogDetail = () => {
       <Flex isColumn gap={20}>
         <Text fontSize={36} fontWeight={600} >{datas.title}</Text>
         <Text fontSize={20} fontWeight={300} color={colors.gray[500]}>{datas.createdAt}</Text>
+        <Keyword>{datas.keyword}</Keyword>
       </Flex>
       {accessToken && (
       <Flex alignItems="center" gap={12}>
