@@ -2,6 +2,9 @@ import { useState } from "react"
 import { colors, Flex, Text } from "../design-token"
 import { Button, DelModal } from "../components"
 import styled from "@emotion/styled"
+import { useNavigate, useParams } from "react-router-dom"
+import  ReactMarkdown  from 'react-markdown';
+import remarkGfm from "remark-gfm"
 
 export const BlogDetail = () => {
   const [datas, setDatas] = useState<{title: string, createdAt: string, content: string}>({
@@ -12,6 +15,10 @@ export const BlogDetail = () => {
   const [isDelModalShow, setIsDelModalShow] = useState<boolean>(false)
 
   const accessToken = 'dsadddds'
+  const {id} = useParams()
+  const blogId = Number(id)
+  
+  const navigate = useNavigate()
 
   const handleDelModalClick = () => {
     setIsDelModalShow(true)
@@ -26,18 +33,17 @@ export const BlogDetail = () => {
       </Flex>
       {accessToken && (
       <Flex alignItems="center" gap={12}>
-        <Button backgroundColor={colors.red[100]} color={colors.red[600]}>수정</Button>
+        <Button onClick={() => navigate(`/blog-edit/${blogId}`)} backgroundColor={colors.red[100]} color={colors.red[600]}>수정</Button>
         <Button onClick={handleDelModalClick}>삭제</Button>
       </Flex>
       )}
       </Flex>
-      <div>
-        {datas.content}
-      </div>
+      <Flex isColumn gap={8}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {datas.content}
+        </ReactMarkdown>
       </Flex>
-      {
-
-      }
+      </Flex>
       <DelModal setIsOpen={setIsDelModalShow} isOpen={isDelModalShow}/>
     </Container>
   )
