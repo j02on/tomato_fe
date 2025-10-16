@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { colors, Flex, Text } from "../design-token"
+import { colors, Flex } from "../design-token"
 import { Logo } from "../assets"
 import { Button } from "./Button"
 import { useNavigate } from "react-router-dom"

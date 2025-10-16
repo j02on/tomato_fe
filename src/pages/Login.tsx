@@ -13,6 +13,9 @@ export const Login = () => {
     setDatas((prev) => ({ ...prev, [type]: e.target.value }));
   }
 
+  const handleLoginClick = () => {
+    //login api
+  }
   
   return (
     <Container>
@@ -23,7 +26,7 @@ export const Login = () => {
             <Inputs value={datas.id} onChange={(e) => handleChange(e, "id")} label="아이디" placeholder="아이디를 입력하세요"/>
             <Inputs isPwd value={datas.password} onChange={(e) => handleChange(e, "password")} label="비밀번호" placeholder="비밀번호를 입력하세요"/>
           </Flex>
-          <Button width="100%">로그인</Button>
+          <Button onClick={handleLoginClick} width="100%">로그인</Button>
         </Flex>
       </LoginContent>
     </Container>

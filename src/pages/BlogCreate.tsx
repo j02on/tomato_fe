@@ -4,9 +4,11 @@ import { colors, Flex, Text } from "../design-token"
 import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { useNavigate } from "react-router-dom";
 
 
 export const BlogCreate = () => {
+  const navigate = useNavigate()
   const [selected, setSelected] = useState<string>('전체')
   const [datas, setDatas] = useState<{title: string, content: string, keyword: string}>({
     title: '',
@@ -26,6 +28,9 @@ export const BlogCreate = () => {
     setDatas((prev) => ({ ...prev, [type]: e.target.value }));
   }
 
+  const handleWriteClick = () =>{
+    //writeapi
+  }
   return (
     <Flex isColumn gap={0}>
       <Flex width="100%" gap={0} alignItems="center">
@@ -57,8 +62,8 @@ export const BlogCreate = () => {
       </Flex>
       <BottomContainer>
         <Flex alignItems="center" gap={12}>
-          <Button backgroundColor={colors.red[100]} color={colors.red[600]}>취소</Button>
-          <Button>작성완료</Button>
+          <Button onClick={() => navigate(-1)} backgroundColor={colors.red[100]} color={colors.red[600]}>취소</Button>
+          <Button onClick={handleWriteClick}>작성완료</Button>
         </Flex>
       </BottomContainer>
     </Flex>

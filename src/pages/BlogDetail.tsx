@@ -7,7 +7,7 @@ import  ReactMarkdown  from 'react-markdown';
 import remarkGfm from "remark-gfm"
 
 export const BlogDetail = () => {
-  const [datas, setDatas] = useState<{title: string, createdAt: string, content: string}>({
+  const [datas, _] = useState<{title: string, createdAt: string, content: string}>({
     title: 'title',
     createdAt: '2024-01-01',
     content: 'content'
@@ -22,6 +22,10 @@ export const BlogDetail = () => {
 
   const handleDelModalClick = () => {
     setIsDelModalShow(true)
+  }
+
+  const handleDelClick = () =>{
+    //del api
   }
   return (
     <Container>
@@ -44,7 +48,7 @@ export const BlogDetail = () => {
         </ReactMarkdown>
       </Flex>
       </Flex>
-      <DelModal setIsOpen={setIsDelModalShow} isOpen={isDelModalShow}/>
+      <DelModal onDelete={handleDelClick} setIsOpen={setIsDelModalShow} isOpen={isDelModalShow}/>
     </Container>
   )
 }
